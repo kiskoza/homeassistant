@@ -2,8 +2,7 @@
   alias: Takarítás ütemezése hétköznap
   trigger:
   - platform: template
-    value_template: '{{ states.sensor.vacuum_start_time_weekdays.state == states.sensor.time.state
-      }}'
+    value_template: '{{ states.sensor.vacuum_start_time_weekdays.state == states.sensor.time.state }}'
   condition:
   - condition: time
     weekday:
@@ -20,8 +19,7 @@
   alias: Takarítás ütemezése hétvégén
   trigger:
   - platform: template
-    value_template: '{{ states.sensor.vacuum_start_time_weekend.state == states.sensor.time.state
-      }}'
+    value_template: '{{ states.sensor.vacuum_start_time_weekend.state == states.sensor.time.state }}'
   condition:
   - condition: time
     weekday:
