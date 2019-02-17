@@ -1,0 +1,11 @@
+# Ignore installed packages
+deps/
+
+# Ignore secrets
+secrets.yaml
+.uuid
+
+# Ignore temporary files & logs
+.storage/
+*.log
+*.db

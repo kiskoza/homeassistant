@@ -1,0 +1,5 @@
+title: 'Home'
+views:
+  - title: 'home'
+    path: 'home'
+    cards: !include_dir_merge_list cards
