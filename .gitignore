@@ -9,3 +9,5 @@ secrets.yaml
 .storage/
 *.log
 *.db
+*.db-shm
+*.db-wal

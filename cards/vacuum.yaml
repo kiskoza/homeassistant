@@ -3,17 +3,27 @@
   - type: vertical-stack
     cards:
       - type: picture-elements
-        image: /local/house/vacuum.jpeg
+        image: /local/cards/vacuum.jpeg
         elements:
         - type: icon
-          icon: mdi:bell-ring
+          icon: mdi:stop
           tap_action:
             action: call-service
             entity: vacuum.xiaomi_vacuum_cleaner
-            service: vacuum.locate
+            service: vacuum.stop
           style:
             top: 90%
-            left: 65%
+            left: 45%
+            "--paper-item-icon-color": rgb(115, 122, 130)
+        - type: icon
+          icon: mdi:play
+          tap_action:
+            action: call-service
+            entity: vacuum.xiaomi_vacuum_cleaner
+            service: vacuum.start
+          style:
+            top: 90%
+            left: 35%
             "--paper-item-icon-color": rgb(115, 122, 130)
         - type: icon
           tap_action:
@@ -26,55 +36,15 @@
             left: 55%
             "--paper-item-icon-color": rgb(115, 122, 130)
         - type: icon
-          icon: mdi:play
+          icon: mdi:bell-ring
           tap_action:
             action: call-service
             entity: vacuum.xiaomi_vacuum_cleaner
-            service: vacuum.start
+            service: vacuum.locate
           style:
             top: 90%
-            left: 45%
+            left: 65%
             "--paper-item-icon-color": rgb(115, 122, 130)
-        - type: icon
-          icon: mdi:stop
-          tap_action:
-            action: call-service
-            entity: vacuum.xiaomi_vacuum_cleaner
-            service: vacuum.stop
-          style:
-            top: 90%
-            left: 35%
-            "--paper-item-icon-color": rgb(115, 122, 130)
-        - type: state-label
-          entity: sensor.vacuum_operation
-          style:
-            top: 10%
-            left: 1%
-            color: rgb(255, 255, 255)
-            transform: translate(0%,-50%)
-            pointer-events: none
-            text-shadow: 1px 1px black
-            font-family: Trebuchet MS
-            font-size: 90%
-            font-weight: bold
-            border-color: rgb(34, 154, 210)
-            background-color: rgb(54, 65, 78)
-            opacity: 0.8
-        - type: state-label
-          entity: sensor.vacuum_accessories
-          style:
-            top: 10%
-            right: 1%
-            color: rgb(255, 255, 255)
-            transform: translate(0%,-50%)
-            pointer-events: none
-            text-shadow: 1px 1px black
-            font-family: Trebuchet MS
-            font-size: 90%
-            font-weight: bold
-            border-color: rgb(34, 154, 210)
-            background-color: rgb(54, 65, 78)
-            opacity: 0.8
         - type: state-label
           entity: sensor.vacuum_main_brush
           style:
@@ -196,34 +166,34 @@
             border-color: rgb(34, 154, 210)
             opacity: 0.8
         - type: image
-          entity: automation.takaritas_utemezese_hetkoznap
+          entity: automation.cleaning_schedule_weekdays
           tap_action:
             action: toggle
-          image: /local/house/timer-off.png
+          image: /local/icons/timer-off.png
           state_image:
-            'on': /local/house/timer-on.png
+            'on': /local/icons/timer-on.png
           state_filter:
             'on': brightness(200%) saturate(1.8)
             'off': brightness(80%) saturate(0.8)
           style:
            top: 75%
-           left: 25%
+           left: 20%
         - type: image
-          entity: automation.takaritas_utemezese_hetvegen
+          entity: automation.cleaning_schedule_weekend
           tap_action:
             action: toggle
-          image: /local/house/timer-off.png
+          image: /local/icons/timer-off.png
           state_image:
-            'on': /local/house/timer-on.png
+            'on': /local/icons/timer-on.png
           state_filter:
             'on': brightness(200%) saturate(1.8)
             'off': brightness(80%) saturate(0.8)
           style:
            top: 60%
-           left: 22%
+           left: 20%
   - type: conditional
     conditions:
-      - entity: automation.takaritas_utemezese_hetkoznap
+      - entity: automation.cleaning_schedule_weekdays
         state: "on"
     card:
       type: entities
@@ -233,7 +203,7 @@
         - input_number.vacuum_start_minutes_weekdays
   - type: conditional
     conditions:
-      - entity: automation.takaritas_utemezese_hetvegen
+      - entity: automation.cleaning_schedule_weekend
         state: "on"
     card:
       type: entities

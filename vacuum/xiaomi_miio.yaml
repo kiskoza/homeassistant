@@ -1,3 +1,0 @@
-- platform: xiaomi_miio
-  host: !secret roborock_host
-  token: !secret roborock_token

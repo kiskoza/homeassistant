@@ -6,6 +6,7 @@ homeassistant:
   unit_system: metric
   time_zone: Europe/Budapest
   customize: !include customize.yaml
+  packages: !include_dir_named packages
 
 lovelace:
   mode: yaml
@@ -51,37 +52,5 @@ system_health:
 
 # Includes
 sensor: !include_dir_merge_list sensor
-vacuum:  !include_dir_merge_list vacuum
 group: !include groups.yaml
-automation: !include automations.yaml
 script: !include scripts.yaml
-
-input_number:
-  vacuum_start_minutes_weekend:
-    name: Indítási perc
-    initial: 0
-    min: 0
-    max: 59
-    step: 1
-    mode: slider
-  vacuum_start_hour_weekend:
-    name: Indítási óra
-    initial: 13
-    min: 0
-    max: 23
-    step: 1
-    mode: slider
-  vacuum_start_minutes_weekdays:
-    name: Indítási perc
-    initial: 0
-    min: 0
-    max: 59
-    step: 1
-    mode: slider
-  vacuum_start_hour_weekdays:
-    name: Indítási óra
-    initial: 15
-    min: 0
-    max: 23
-    step: 1
-    mode: slider
