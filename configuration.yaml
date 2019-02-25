@@ -50,6 +50,13 @@ sun:
 # Allow diagnosing system problems
 system_health:
 
+notify:
+  - platform: html5
+    name: push
+    vapid_pub_key: !secret vapid_pub_key
+    vapid_prv_key: !secret vapid_prv_key
+    vapid_email: !secret vapid_email
+
 # Includes
 sensor: !include_dir_merge_list sensor
 group: !include groups.yaml
