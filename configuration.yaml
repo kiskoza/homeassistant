@@ -19,7 +19,7 @@ config:
 
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
 http:
-  base_url: http://hass.home
+  base_url: !secret base_url
   use_x_forwarded_for: true
   trusted_proxies: 127.0.0.1
 
