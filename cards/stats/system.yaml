@@ -1,0 +1,21 @@
+- type: vertical-stack
+  cards:
+  - type: entities
+    entities:
+      - sensor.last_boot
+  - type: history-graph
+    title: 'Memory'
+    hours_to_show: 24
+    entities:
+      - entity: sensor.memory_free
+        name: 'Memory Free'
+      - entity: sensor.memory_use
+        name: 'Memory Use'
+  - type: history-graph
+    title: 'System'
+    hours_to_show: 24
+    entities:
+      - entity: sensor.disk_use_percent_home_odin_data
+        name: 'Storage'
+      - entity: sensor.processor_use
+        name: 'Processor'
