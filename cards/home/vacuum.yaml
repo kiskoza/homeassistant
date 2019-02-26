@@ -1,3 +1,25 @@
+- type: custom:popup-card
+  entity: automation.cleaning_schedule_weekdays
+  title: Cleaning Schedule on Weekdays
+  card:
+    type: entities
+    entities:
+      - automation.cleaning_schedule_weekdays
+      - sensor.vacuum_start_time_weekdays
+      - input_number.vacuum_start_hour_weekdays
+      - input_number.vacuum_start_minutes_weekdays
+
+- type: custom:popup-card
+  entity: automation.cleaning_schedule_weekend
+  title: Cleaning Schedule on Weekends
+  card:
+    type: entities
+    entities:
+      - automation.cleaning_schedule_weekend
+      - sensor.vacuum_start_time_weekend
+      - input_number.vacuum_start_hour_weekend
+      - input_number.vacuum_start_minutes_weekend
+
 - type: vertical-stack
   cards:
   - type: vertical-stack
@@ -138,21 +160,6 @@
         - type: state-label
           entity: sensor.vacuum_weekdays
           style:
-            top: 75%
-            left: 1%
-            color: rgb(255, 255, 255)
-            transform: translate(0%,-50%)
-            pointer-events: none
-            text-shadow: 1px 1px black
-            font-family: Trebuchet MS
-            font-size: 90%
-            font-weight: bold
-            border-left-style: solid
-            border-color: rgb(34, 154, 210)
-            opacity: 0.8
-        - type: state-label
-          entity: sensor.vacuum_weekend
-          style:
             top: 60%
             left: 1%
             color: rgb(255, 255, 255)
@@ -167,47 +174,32 @@
             opacity: 0.8
         - type: image
           entity: automation.cleaning_schedule_weekdays
-          tap_action:
-            action: toggle
           image: /local/icons/timer-off.png
           state_image:
             'on': /local/icons/timer-on.png
-          state_filter:
-            'on': brightness(200%) saturate(1.8)
-            'off': brightness(80%) saturate(0.8)
-          style:
-           top: 75%
-           left: 20%
-        - type: image
-          entity: automation.cleaning_schedule_weekend
-          tap_action:
-            action: toggle
-          image: /local/icons/timer-off.png
-          state_image:
-            'on': /local/icons/timer-on.png
-          state_filter:
-            'on': brightness(200%) saturate(1.8)
-            'off': brightness(80%) saturate(0.8)
           style:
            top: 60%
-           left: 20%
-  - type: conditional
-    conditions:
-      - entity: automation.cleaning_schedule_weekdays
-        state: "on"
-    card:
-      type: entities
-      entities:
-        - sensor.vacuum_start_time_weekdays
-        - input_number.vacuum_start_hour_weekdays
-        - input_number.vacuum_start_minutes_weekdays
-  - type: conditional
-    conditions:
-      - entity: automation.cleaning_schedule_weekend
-        state: "on"
-    card:
-      type: entities
-      entities:
-        - sensor.vacuum_start_time_weekend
-        - input_number.vacuum_start_hour_weekend
-        - input_number.vacuum_start_minutes_weekend
+           left: 7em
+        - type: state-label
+          entity: sensor.vacuum_weekend
+          style:
+            top: 75%
+            left: 1%
+            color: rgb(255, 255, 255)
+            transform: translate(0%,-50%)
+            pointer-events: none
+            text-shadow: 1px 1px black
+            font-family: Trebuchet MS
+            font-size: 90%
+            font-weight: bold
+            border-left-style: solid
+            border-color: rgb(34, 154, 210)
+            opacity: 0.8
+        - type: image
+          entity: automation.cleaning_schedule_weekend
+          image: /local/icons/timer-off.png
+          state_image:
+            'on': /local/icons/timer-on.png
+          style:
+           top: 75%
+           left: 7em

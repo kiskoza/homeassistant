@@ -1,4 +1,9 @@
 title: 'Home'
+resources:
+  - url: /local/vendor/lovelace-card-tools/card-tools.js?version=0.4
+    type: js
+  - url: /local/vendor/lovelace-popup-card/popup-card.js?commit=044b089
+    type: js
 views:
   - title: 'home'
     icon: mdi:home
