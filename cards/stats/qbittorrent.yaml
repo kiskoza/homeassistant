@@ -1,6 +1,6 @@
 - type: history-graph
   title: 'qBittorrent'
-  hours_to_show: 48
+  hours_to_show: 24
   entities:
     - entity: sensor.qbittorrent_down_speed
       name: 'Download Speed'
