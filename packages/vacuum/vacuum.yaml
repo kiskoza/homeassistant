@@ -67,6 +67,10 @@ input_number:
 sensor:
   - platform: template
     sensors:
+      vacuum_maintenance:
+        friendly_name: 'Vacuum maintenance'
+        value_template: 'Maintenance'
+        icon_template: mdi:wrench
       vacuum_start_time_weekdays:
         friendly_name: 'Cleaning Shedule on Weekdays'
         value_template: '{{ "%0.02d:%0.02d" | format(states("input_number.vacuum_start_hour_weekdays") | int, states("input_number.vacuum_start_minutes_weekdays") | int) }}'

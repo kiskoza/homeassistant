@@ -20,6 +20,45 @@
       - input_number.vacuum_start_hour_weekend
       - input_number.vacuum_start_minutes_weekend
 
+- type: custom:popup-card
+  entity: sensor.vacuum_maintenance
+  title: Maintenance
+  card:
+    type: entities
+    entities:
+      - type: call-service
+        name: 'Reset Main Brush'
+        icon: mdi:broom
+        service: vacuum.send_command
+        service_data:
+          entity_id: vacuum.xiaomi_vacuum_cleaner
+          command: reset_consumable
+          params: main_brush_work_time
+      - type: call-service
+        name: 'Reset Side Brush'
+        icon: mdi:broom
+        service: vacuum.send_command
+        service_data:
+          - entity_id: vacuum.xiaomi_vacuum_cleaner
+          - command: reset_consumable
+          - params: side_brush_work_time
+      - type: call-service
+        name: 'Reset Filter'
+        icon: mdi:air-filter
+        service: vacuum.send_command
+        service_data:
+          - entity_id: vacuum.xiaomi_vacuum_cleaner
+          - command: reset_consumable
+          - params: filter_work_time
+      - type: call-service
+        name: 'Reset Sensor Dirty'
+        icon: mdi:robot-vacuum
+        service: vacuum.send_command
+        service_data:
+          - entity_id: vacuum.xiaomi_vacuum_cleaner
+          - command: reset_consumable
+          - params: sensor_dirty_time
+
 - type: vertical-stack
   cards:
   - type: vertical-stack
@@ -28,16 +67,6 @@
         image: /local/cards/vacuum.jpeg
         elements:
         - type: icon
-          icon: mdi:stop
-          tap_action:
-            action: call-service
-            entity: vacuum.xiaomi_vacuum_cleaner
-            service: vacuum.stop
-          style:
-            top: 90%
-            left: 45%
-            "--paper-item-icon-color": rgb(115, 122, 130)
-        - type: icon
           icon: mdi:play
           tap_action:
             action: call-service
@@ -45,8 +74,18 @@
             service: vacuum.start
           style:
             top: 90%
-            left: 35%
-            "--paper-item-icon-color": rgb(115, 122, 130)
+            left: 30%
+            "--paper-item-icon-color": black
+        - type: icon
+          icon: mdi:stop
+          tap_action:
+            action: call-service
+            entity: vacuum.xiaomi_vacuum_cleaner
+            service: vacuum.stop
+          style:
+            top: 90%
+            left: 40%
+            "--paper-item-icon-color": black
         - type: icon
           tap_action:
             action: call-service
@@ -55,8 +94,8 @@
           icon: mdi:home
           style:
             top: 90%
-            left: 55%
-            "--paper-item-icon-color": rgb(115, 122, 130)
+            left: 50%
+            "--paper-item-icon-color": black
         - type: icon
           icon: mdi:bell-ring
           tap_action:
@@ -65,8 +104,15 @@
             service: vacuum.locate
           style:
             top: 90%
-            left: 65%
-            "--paper-item-icon-color": rgb(115, 122, 130)
+            left: 60%
+            "--paper-item-icon-color": black
+        - type: state-icon
+          entity: sensor.vacuum_maintenance
+          icon: mdi:wrench-outline
+          style:
+            top: 90%
+            left: 70%
+            "--paper-item-icon-color": black
         - type: state-label
           entity: sensor.vacuum_main_brush
           style:
