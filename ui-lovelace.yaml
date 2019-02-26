@@ -5,11 +5,11 @@ resources:
   - url: /local/vendor/lovelace-popup-card/popup-card.js?commit=044b089
     type: js
 views:
-  - title: 'home'
+  - title: 'Home'
     icon: mdi:home
     path: 'home'
     cards: !include_dir_merge_list cards/home
-  - title: 'home'
+  - title: 'Stats'
     icon: mdi:chart-bar
     path: 'stats'
     cards: !include_dir_merge_list cards/stats
