@@ -51,6 +51,14 @@
         left: 70%
         "--paper-item-icon-color": black
     - type: state-label
+      entity: vacuum.xiaomi_vacuum_cleaner
+      style:
+        top: 10%
+        left: 48%
+        font-size: 150%
+        text-shadow: 1px 1px white
+        font-family: Trebuchet MS
+    - type: state-label
       entity: sensor.vacuum_main_brush
       style:
         top: 30%
