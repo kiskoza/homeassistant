@@ -67,6 +67,10 @@ input_number:
 sensor:
   - platform: template
     sensors:
+      vacuum_floorplan:
+        friendly_name: 'Floor plan'
+        value_template: 'Floor plan'
+        icon_template: 'mdi:floor-plan'
       vacuum_maintenance:
         friendly_name: 'Vacuum maintenance'
         value_template: 'Maintenance'

@@ -11,7 +11,7 @@
         service: vacuum.start
       style:
         top: 90%
-        left: 30%
+        left: 25%
         "--paper-item-icon-color": black
     - type: icon
       icon: mdi:stop
@@ -21,7 +21,7 @@
         service: vacuum.stop
       style:
         top: 90%
-        left: 40%
+        left: 35%
         "--paper-item-icon-color": black
     - type: icon
       tap_action:
@@ -31,7 +31,13 @@
       icon: mdi:home
       style:
         top: 90%
-        left: 50%
+        left: 45%
+        "--paper-item-icon-color": black
+    - type: state-icon
+      entity: sensor.vacuum_floorplan
+      style:
+        top: 90%
+        left: 55%
         "--paper-item-icon-color": black
     - type: icon
       icon: mdi:bell-ring
@@ -41,15 +47,15 @@
         service: vacuum.locate
       style:
         top: 90%
-        left: 60%
+        left: 65%
         "--paper-item-icon-color": black
     - type: state-icon
       entity: sensor.vacuum_maintenance
-      icon: mdi:wrench-outline
       style:
         top: 90%
-        left: 70%
+        left: 75%
         "--paper-item-icon-color": black
+
     - type: state-label
       entity: vacuum.xiaomi_vacuum_cleaner
       style:
@@ -255,3 +261,59 @@
             - entity_id: vacuum.xiaomi_vacuum_cleaner
             - command: reset_consumable
             - params: sensor_dirty_time
+
+  - type: custom:popup-card
+    entity: sensor.vacuum_floorplan
+    title: Manually clean a room
+    card:
+      type: picture-elements
+      image: /local/cards/floorplan.png
+      elements:
+        - type: icon
+          icon: mdi:broom
+          tap_action:
+            action: call-service
+            service: vacuum.xiaomi_clean_zone
+            entity_id: vacuum.xiaomi_vacuum_cleaner
+            service_data:
+              zone: [[21430,29500,25700,30750]]
+              repeats: 1
+          style:
+            top: 55%
+            left: 28%
+        - type: icon
+          icon: mdi:broom
+          tap_action:
+            action: call-service
+            service: vacuum.xiaomi_clean_zone
+            entity_id: vacuum.xiaomi_vacuum_cleaner
+            service_data:
+              zone: [[25900,29500,27450,31900]]
+              repeats: 1
+          style:
+            top: 18%
+            left: 23%
+        - type: icon
+          icon: mdi:broom
+          tap_action:
+            action: call-service
+            service: vacuum.xiaomi_clean_zone
+            entity_id: vacuum.xiaomi_vacuum_cleaner
+            service_data:
+              zone: [[24550,25150,27400,29100]]
+              repeats: 1
+          style:
+            top: 27%
+            left: 56%
+        - type: icon
+          icon: mdi:broom
+          tap_action:
+            action: call-service
+            service: vacuum.xiaomi_clean_zone
+            entity_id: vacuum.xiaomi_vacuum_cleaner
+            service_data:
+              zone: [[21430,23750,24250,29100]]
+              repeats: 1
+          style:
+            top: 72%
+            left: 65%
