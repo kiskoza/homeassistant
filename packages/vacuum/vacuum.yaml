@@ -33,6 +33,20 @@ automation:
     - data:
         entity_id: vacuum.xiaomi_vacuum_cleaner
       service: vacuum.start
+  - id: cleaning_state_changed
+    alias: Cleaning State Changed
+    trigger:
+    - platform: state
+      entity_id: vacuum.xiaomi_vacuum_cleaner
+    action:
+    - service: notify.push
+      data_template:
+        message: "The vacuum is {{ states('vacuum.xiaomi_vacuum_cleaner') }} now."
+      data:
+        title: 'Xiaomi Vacuum'
+        data:
+          renotify: true
+          tag: 'xiaomi-vacuum'
 
 input_number:
   vacuum_start_minutes_weekend:
