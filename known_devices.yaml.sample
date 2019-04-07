@@ -1,0 +1,24 @@
+
+rockrobo:
+  hide_if_away: false
+  icon:
+  mac: xx:xx:xx:xx:xx:xx
+  name: rockrobo
+  picture:
+  track: false
+
+redmi:
+  hide_if_away: false
+  icon:
+  mac: xx:xx:xx:xx:xx:xx
+  name: REDMI
+  picture:
+  track: true
+
+think:
+  hide_if_away: true
+  icon:
+  mac: xx:xx:xx:xx:xx:xx
+  name: THINK
+  picture:
+  track: true

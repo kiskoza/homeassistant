@@ -5,6 +5,7 @@ deps/
 html5_push_registrations.conf
 secrets.yaml
 .uuid
+known_devices.yaml
 
 # Ignore temporary files & logs
 .storage/
