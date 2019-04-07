@@ -7,8 +7,9 @@
       icon: mdi:play
       tap_action:
         action: call-service
-        entity: vacuum.xiaomi_vacuum_cleaner
         service: vacuum.start
+        service_data:
+          entity_id: vacuum.xiaomi_vacuum_cleaner
       style:
         top: 90%
         left: 25%
@@ -17,8 +18,9 @@
       icon: mdi:stop
       tap_action:
         action: call-service
-        entity: vacuum.xiaomi_vacuum_cleaner
         service: vacuum.stop
+        service_data:
+          entity_id: vacuum.xiaomi_vacuum_cleaner
       style:
         top: 90%
         left: 35%
@@ -26,8 +28,9 @@
     - type: icon
       tap_action:
         action: call-service
-        entity: vacuum.xiaomi_vacuum_cleaner
         service: vacuum.return_to_base
+        service_data:
+          entity_id: vacuum.xiaomi_vacuum_cleaner
       icon: mdi:home
       style:
         top: 90%
@@ -43,8 +46,9 @@
       icon: mdi:bell-ring
       tap_action:
         action: call-service
-        entity: vacuum.xiaomi_vacuum_cleaner
         service: vacuum.locate
+        service_data:
+          entity_id: vacuum.xiaomi_vacuum_cleaner
       style:
         top: 90%
         left: 65%
