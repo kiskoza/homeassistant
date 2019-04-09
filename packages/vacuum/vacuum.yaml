@@ -4,6 +4,7 @@ homeassistant:
 automation:
   - id: cleaning_schedule_weekdays
     alias: Cleaning Schedule Weekdays
+    initial_state: 'true'
     trigger:
     - platform: template
       value_template: '{{ states.sensor.vacuum_start_time_weekdays.state == states.sensor.time.state }}'
@@ -21,6 +22,7 @@ automation:
       service: vacuum.start
   - id: cleaning_schedule_weekend
     alias: Cleaning Schedule Weekend
+    initial_state: 'false'
     trigger:
     - platform: template
       value_template: '{{ states.sensor.vacuum_start_time_weekend.state == states.sensor.time.state }}'
@@ -35,6 +37,8 @@ automation:
       service: vacuum.start
   - id: cleaning_state_changed
     alias: Cleaning State Changed
+    initial_state: 'true'
+    hide_entity: true
     trigger:
     - platform: state
       entity_id: vacuum.xiaomi_vacuum_cleaner
