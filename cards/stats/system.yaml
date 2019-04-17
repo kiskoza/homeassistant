@@ -4,14 +4,6 @@
     entities:
       - sensor.last_boot
   - type: history-graph
-    title: 'Memory'
-    hours_to_show: 24
-    entities:
-      - entity: sensor.memory_free
-        name: 'Memory Free'
-      - entity: sensor.memory_use
-        name: 'Memory Use'
-  - type: history-graph
     title: 'System'
     hours_to_show: 24
     entities:
@@ -19,3 +11,5 @@
         name: 'Storage'
       - entity: sensor.processor_use
         name: 'Processor'
+      - entity: sensor.memory_use_percent
+        name: 'Memory'
