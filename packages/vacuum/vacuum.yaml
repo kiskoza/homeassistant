@@ -41,7 +41,7 @@ automation:
     hide_entity: true
     trigger:
     - platform: state
-      entity_id: vacuum.xiaomi_vacuum_cleaner
+      entity_id: sensor.vacuum_status
     action:
     - service: notify.push
       data_template:
