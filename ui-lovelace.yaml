@@ -2,15 +2,23 @@ title: 'Home'
 resources:
   - url: /local/vendor/lovelace-card-tools/card-tools.js?commit=c885db9
     type: js
+  - url: /local/vendor/lovelace-layout-card/layout-card.js?commit=83e2b16
+    type: js
   - url: /local/vendor/lovelace-popup-card/popup-card.js?commit=78d39ab
     type: js
 views:
   - title: 'Home'
+    cards:
+    - type: custom:layout-card
+      cards: !include_dir_merge_list views/home/cards
     icon: mdi:home
+    panel: true
     path: 'home'
     popup_cards: !include_dir_merge_named views/home/popups
-    cards: !include_dir_merge_list views/home/cards
   - title: 'Stats'
+    cards:
+    - type: custom:layout-card
+      cards: !include_dir_merge_list views/stats/cards
     icon: mdi:chart-bar
+    panel: true
     path: 'stats'
-    cards: !include_dir_merge_list views/stats/cards
