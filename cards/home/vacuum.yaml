@@ -246,25 +246,25 @@
           icon: mdi:broom
           service: vacuum.send_command
           service_data:
-            - entity_id: vacuum.xiaomi_vacuum_cleaner
-            - command: reset_consumable
-            - params: side_brush_work_time
+            entity_id: vacuum.xiaomi_vacuum_cleaner
+            command: reset_consumable
+            params: side_brush_work_time
         - type: call-service
           name: 'Reset Filter'
           icon: mdi:air-filter
           service: vacuum.send_command
           service_data:
-            - entity_id: vacuum.xiaomi_vacuum_cleaner
-            - command: reset_consumable
-            - params: filter_work_time
+            entity_id: vacuum.xiaomi_vacuum_cleaner
+            command: reset_consumable
+            params: filter_work_time
         - type: call-service
           name: 'Reset Sensor Dirty'
           icon: mdi:robot-vacuum
           service: vacuum.send_command
           service_data:
-            - entity_id: vacuum.xiaomi_vacuum_cleaner
-            - command: reset_consumable
-            - params: sensor_dirty_time
+            entity_id: vacuum.xiaomi_vacuum_cleaner
+            command: reset_consumable
+            params: sensor_dirty_time
 
   - type: custom:popup-card
     entity: sensor.vacuum_floorplan
