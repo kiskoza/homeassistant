@@ -1,0 +1,9 @@
+automation.cleaning_schedule_weekdays:
+  title: Cleaning Schedule on Weekdays
+  card:
+    type: entities
+    entities:
+      - automation.cleaning_schedule_weekdays
+      - sensor.vacuum_start_time_weekdays
+      - input_number.vacuum_start_hour_weekdays
+      - input_number.vacuum_start_minutes_weekdays

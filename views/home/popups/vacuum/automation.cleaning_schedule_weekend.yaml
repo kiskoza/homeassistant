@@ -1,0 +1,9 @@
+automation.cleaning_schedule_weekend:
+  title: Cleaning Schedule on Weekends
+  card:
+    type: entities
+    entities:
+      - automation.cleaning_schedule_weekend
+      - sensor.vacuum_start_time_weekend
+      - input_number.vacuum_start_hour_weekend
+      - input_number.vacuum_start_minutes_weekend

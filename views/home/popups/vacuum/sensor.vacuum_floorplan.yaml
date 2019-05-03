@@ -1,0 +1,54 @@
+sensor.vacuum_floorplan:
+  title: Manually clean a room
+  card:
+    type: picture-elements
+    image: /local/cards/floorplan.png
+    elements:
+      - type: icon
+        icon: mdi:broom
+        tap_action:
+          action: call-service
+          service: vacuum.xiaomi_clean_zone
+          entity_id: vacuum.xiaomi_vacuum_cleaner
+          service_data:
+            zone: [[21430,29500,25700,30750]]
+            repeats: 1
+        style:
+          top: 55%
+          left: 28%
+      - type: icon
+        icon: mdi:broom
+        tap_action:
+          action: call-service
+          service: vacuum.xiaomi_clean_zone
+          entity_id: vacuum.xiaomi_vacuum_cleaner
+          service_data:
+            zone: [[25900,29500,27450,31900]]
+            repeats: 1
+        style:
+          top: 18%
+          left: 23%
+      - type: icon
+        icon: mdi:broom
+        tap_action:
+          action: call-service
+          service: vacuum.xiaomi_clean_zone
+          entity_id: vacuum.xiaomi_vacuum_cleaner
+          service_data:
+            zone: [[24550,25150,27400,29100]]
+            repeats: 1
+        style:
+          top: 27%
+          left: 56%
+      - type: icon
+        icon: mdi:broom
+        tap_action:
+          action: call-service
+          service: vacuum.xiaomi_clean_zone
+          entity_id: vacuum.xiaomi_vacuum_cleaner
+          service_data:
+            zone: [[21430,23750,24250,29100]]
+            repeats: 1
+        style:
+          top: 72%
+          left: 65%
