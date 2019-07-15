@@ -59,7 +59,7 @@
       "--paper-item-icon-color": black
 
   - type: state-label
-    entity: vacuum.xiaomi_vacuum_cleaner
+    entity: sensor.vacuum_activity
     style:
       top: 10%
       left: 48%

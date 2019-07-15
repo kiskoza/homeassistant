@@ -45,7 +45,7 @@ automation:
     action:
     - service: notify.push
       data_template:
-        message: "The vacuum is {{ states('vacuum.xiaomi_vacuum_cleaner') }} now."
+        message: "The vacuum is {{ states('sensor.vacuum_activity') }} now."
       data:
         title: 'Xiaomi Vacuum'
         data:
@@ -85,6 +85,8 @@ input_number:
 sensor:
   - platform: template
     sensors:
+      vacuum_activity:
+        value_template: '{{ states.vacuum.xiaomi_vacuum_cleaner.attributes.error if states.vacuum.xiaomi_vacuum_cleaner.state == "error" else states.vacuum.xiaomi_vacuum_cleaner.state|capitalize }}'
       vacuum_floorplan:
         friendly_name: 'Floor plan'
         value_template: 'Floor plan'
