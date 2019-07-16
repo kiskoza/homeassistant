@@ -1,9 +1,9 @@
 [submodule "lovelace-popup-card"]
 	path = www/vendor/lovelace-popup-card
-	url = git@github.com:thomasloven/lovelace-popup-card.git
+	url = https://github.com/thomasloven/lovelace-popup-card.git
 [submodule "lovelace-card-tools"]
 	path = www/vendor/lovelace-card-tools
-	url = git@github.com:thomasloven/lovelace-card-tools.git
+	url = https://github.com/thomasloven/lovelace-card-tools.git
 [submodule "lovelace-layout-card"]
 	path = www/vendor/lovelace-layout-card
-	url = git@github.com:thomasloven/lovelace-layout-card.git
+	url = https://github.com/thomasloven/lovelace-layout-card.git
