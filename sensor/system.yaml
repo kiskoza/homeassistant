@@ -1,7 +1,7 @@
 - platform: systemmonitor
   resources:
     - type: disk_use_percent
-      arg: /home/odin/data
+      arg: /mnt/yoda
     - type: memory_use_percent
     - type: processor_use
     - type: last_boot
