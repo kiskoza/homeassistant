@@ -7,7 +7,7 @@
     title: 'System'
     hours_to_show: 24
     entities:
-      - entity: sensor.disk_use_percent_home_odin_data
+      - entity: sensor.disk_use_percent_mnt_yoda
         name: 'Storage'
       - entity: sensor.processor_use
         name: 'Processor'
