@@ -1,13 +1,10 @@
 homeassistant:
   customize:
 
-device_tracker:
-  - platform: mikrotik
-    host: !secret mikrotik_ip
+mikrotik:
+  - host: !secret mikrotik_ip
     username: !secret mikrotik_username
     password: !secret mikrotik_password
     port: !secret mikrotik_port
     ssl: true
-    new_device_defaults:
-      hide_if_away: true
-      track_new_devices: false
+    track_devices: true
