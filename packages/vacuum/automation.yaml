@@ -58,10 +58,9 @@ automation:
     trigger:
     - platform: state
       entity_id: device_tracker.redmi
+      from: 'not_home'
+      to: 'home'
     condition:
-    - condition: state
-      entity_id: device_tracker.redmi
-      state: 'home'
     - condition: or
       conditions:
         - condition: template
