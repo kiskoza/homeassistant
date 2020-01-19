@@ -42,14 +42,14 @@ automation:
     - platform: state
       entity_id: sensor.vacuum_status
     action:
-    - service: notify.push
+    - service: notify.mobile_app_redmi_3
       data_template:
         message: "The vacuum is {{ states('sensor.vacuum_activity') }} now."
       data:
         title: 'Xiaomi Vacuum'
         data:
-          renotify: true
-          tag: 'xiaomi-vacuum'
+          apns_headers:
+            'apns-collapse-id': 'xiaomi-vacuum-state'
 
   - id: maintenance_needed
     alias: Maintenance needed
@@ -72,11 +72,10 @@ automation:
         - condition: template
           value_template: "{{ (state_attr('vacuum.xiaomi_vacuum_cleaner', 'sensor_dirty_left')|int) < 4 }}"
     action:
-    - service: notify.push
-      data_template:
-        message: "The vacuum needs maintenance"
+    - service: notify.mobile_app_redmi_3
       data:
         title: 'Xiaomi Vacuum'
+        message: "The vacuum needs maintenance"
         data:
-          renotify: true
-          tag: 'xiaomi-vacuum'
+          apns_headers:
+            'apns-collapse-id': 'xiaomi-vacuum-maintenance'
