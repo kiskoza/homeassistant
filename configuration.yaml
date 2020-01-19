@@ -41,6 +41,8 @@ logbook:
 # Allow diagnosing system problems
 system_health:
 
+mobile_app:
+
 notify:
   - platform: html5
     name: push
