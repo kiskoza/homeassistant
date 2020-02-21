@@ -32,12 +32,6 @@ updater:
   # Optional, allows Home Assistant developers to focus on popular components.
   # include_used_components: true
 
-# Enables support for tracking state changes over time
-history:
-
-# View all events in a logbook
-logbook:
-
 # Allow diagnosing system problems
 system_health:
 
