@@ -12,7 +12,8 @@ recorder:
       - device_tracker
       - vacuum
     entities:
-      - sensor.disk_use_percent_mnt_yoda
+      - sensor.disk_use_percent
+      - sensor.disk_use_percent_home_qbittorrent_downloads
       - sensor.last_boot
       - sensor.memory_use_percent
       - sensor.processor_use

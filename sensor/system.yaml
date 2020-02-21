@@ -1,7 +1,9 @@
 - platform: systemmonitor
   resources:
     - type: disk_use_percent
-      arg: /mnt/yoda
+      arg: /
+    - type: disk_use_percent
+      arg: /home/qbittorrent/downloads
     - type: memory_use_percent
     - type: processor_use
     - type: last_boot

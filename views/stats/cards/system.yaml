@@ -7,8 +7,10 @@
     title: 'System'
     hours_to_show: 24
     entities:
-      - entity: sensor.disk_use_percent_mnt_yoda
-        name: 'Storage'
+      - entity: sensor.disk_use_percent
+        name: 'Storage (Pi)'
+      - entity: sensor.disk_use_percent_home_qbittorrent_downloads
+        name: 'Storage (NAS)'
       - entity: sensor.processor_use
         name: 'Processor'
       - entity: sensor.memory_use_percent
