@@ -1,0 +1,15 @@
+# Ignore installed packages
+deps/
+
+# Ignore secrets
+html5_push_registrations.conf
+secrets.yaml
+.uuid
+known_devices.yaml
+
+# Ignore temporary files & logs
+.storage/
+*.log
+*.db
+*.db-shm
+*.db-wal
